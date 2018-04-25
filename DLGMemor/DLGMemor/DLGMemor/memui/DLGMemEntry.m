@@ -12,7 +12,6 @@
 @implementation DLGMemEntry
 
 static void __attribute__((constructor)) entry() {
-    NSLog(@">>>>> DLGMem Injected <<<<<");
     [[[DLGMem alloc] init] launchDLGMem];
 }
 
