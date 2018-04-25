@@ -19,5 +19,6 @@
 - (DLGMemUIView *)DLGMemUIView;
 - (void)setDLGMemUIView:(DLGMemUIView *)view;
 - (void)handleGesture:(UIPanGestureRecognizer *)sender;
+- (void)handleTTTapGesture:(UIPanGestureRecognizer *)sender;
 
 @end

@@ -148,4 +148,10 @@
     }
 }
 
+- (void)handleTTTapGesture:(UIPanGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        [self DLGMemUIView].hidden = ![self DLGMemUIView].hidden;
+    }
+}
+
 @end

@@ -38,6 +38,11 @@
     if (gestures == nil || gestures.count == 0) {
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:window action:@selector(handleGesture:)];
         [view addGestureRecognizer:pan];
+        
+        UITapGestureRecognizer *tttap = [[UITapGestureRecognizer alloc] initWithTarget:window action:@selector(handleTTTapGesture:)];
+        tttap.numberOfTapsRequired = 3;
+        tttap.numberOfTouchesRequired = 3;
+        [window addGestureRecognizer:tttap];
     }
     
     if ([delegate respondsToSelector:@selector(DLGMemUILaunched:)]) {
