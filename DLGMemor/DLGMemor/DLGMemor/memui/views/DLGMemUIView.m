@@ -84,7 +84,13 @@
 
 - (void)initVars {
     CGRect screenBounds = [UIScreen mainScreen].bounds;
-    self.rcExpandedFrame = screenBounds;
+    if (@available(iOS 11.0, *)) {
+        UIWindow *window = UIApplication.sharedApplication.keyWindow;
+        self.rcExpandedFrame = window.safeAreaLayoutGuide.layoutFrame;
+    }
+    else{
+        self.rcExpandedFrame = screenBounds;
+    }
     self.rcCollapsedFrame = CGRectMake(0, 0, DLG_DEBUG_CONSOLE_VIEW_SIZE, DLG_DEBUG_CONSOLE_VIEW_SIZE);
     
     _shouldNotBeDragged = NO;
